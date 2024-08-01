@@ -24,7 +24,6 @@ const CropHomeScreen = () => {
   const takePhoto = async() => {
     if(cameraRef) {
       const { uri } = await cameraRef.takePictureAsync();
-      console.log(uri);
       router.push(`/crop-screen/result?photoURI=${encodeURIComponent(uri)}`);
     }
 
