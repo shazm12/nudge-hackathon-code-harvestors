@@ -1,26 +1,12 @@
 # Use the specified Python image
-FROM python:3.8.19-alpine3.20
-
-# Set environment variables
-ENV PYTHONUNBUFFERED=1
-
-# Install system dependencies
-RUN apk update && \
-    apk add --no-cache \
-    build-base \
-    libffi-dev \
-    musl-dev \
-    openblas-dev \
-    libjpeg-turbo-dev \
-    zlib-dev && \
-    pip install --upgrade pip
+FROM python:3.8-slim
 
 # Set the working directory
 WORKDIR /app
 
 # Copy requirements file and install Python dependencies
 COPY requirements.txt /app/
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir tensorflow Flask numpy Pillow
 
 # Copy the rest of the application code
 COPY . /app
