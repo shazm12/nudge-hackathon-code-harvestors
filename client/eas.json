@@ -1,0 +1,30 @@
+{
+  "cli": {
+    "version": ">= 10.2.2"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "development-simulator": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": {
+        "simulator": true
+      }
+    },
+    "production": {
+      "env": {
+      "EXPO_PUBLIC_BACKEND_API_ENPOINT":"https://nudge-hackathon-code-harvestors.onrender.com",
+      "EXPO_PUBLIC_LINK_PREVIEW_API_KEY":"153ddae74b899e35414505b6666e738e"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
