@@ -23,7 +23,7 @@ const ResultScreen = () => {
         });
 
         try {
-            const response = await fetch('http://10.103.76.207:5000/predict', {
+            const response = await fetch(`${process.env.EXPO_PUBLIC_BACKEND_API_ENPOINT}/predict`, {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -35,7 +35,7 @@ const ResultScreen = () => {
             setPrediction(predictionText);
             setLoading(false);
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error:', error.message);
             setLoading(false);
         }
 
