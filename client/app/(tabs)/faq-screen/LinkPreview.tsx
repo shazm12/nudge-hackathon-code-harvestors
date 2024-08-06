@@ -11,7 +11,7 @@ const LinkPreview = ({ url }) => {
       setLoading(true);
       try {
         // Fetch metadata from the URL
-        const apiKey = "153ddae74b899e35414505b6666e738e";
+        const apiKey = process.env.EXPO_PUBLIC_LINK_PREVIEW_API_KEY;
         const response = await fetch(`https://api.linkpreview.net/?key=${apiKey}&q=${url}`, {
           method: "GET",
         });
